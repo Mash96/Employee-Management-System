@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="shadow-sm p-3 mb-5 bg-light rounded row justify-content-md-center jumbotron">
+    <form class="form-inline my-2 my-lg-0" (submit)="viewEmployeeByName()">
+      <input class="form-control mr-sm-2" type="search"  name ="search" [(ngModel)]="search" placeholder="Search by Name" aria-label="Search">
+      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="shadow-lg p-3 mb-5 bg-light rounded row justify-content-md-center jumbotron" >
+    <div class="panel panel-primary" >
+      <div class="panel-head">
+        <h3 class="title">LIST OF EMPLOYEES</h3>
+      </div>
+      <div class="panel-body" >
+        <table class="table table-hover" >
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Date of Birth</th>
+              <th>Skills</th>
+              <th><p hidden></p></th>
+              <th><p hidden></p></th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let employee of employee">
+              <td>{{employee.f_name}}</td>
+              <td>{{employee.email}}</td>
+              <td>{{employee.dateOfBirth}}</td>
+              <td>
+                <p *ngFor="let field of employee.skills">{{ field.skill }}<p>
+              </td>
+              
+            <td><button class="btn btn-warning" type="submit" (click)="onUpdate(employee.id)" >Update</button></td>
+            <td><button  class="btn btn-danger" type="submit" (click)="onDelete(employee.id)">Delete</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

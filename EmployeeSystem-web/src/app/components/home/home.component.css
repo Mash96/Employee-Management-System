@@ -1,0 +1,39 @@
+.row .jumbotron{
+    width: 900px;
+    height: 350px;
+}
+
+.row .jumbotron .display-4{
+    text-align: center;
+}
+
+.row .jumbotron .lead{
+    text-align: center;
+}
+
+#addButton{
+margin-right: 20px;
+}
+/* #f87829 */
+#addButton .lead #add{
+    background-color: #f87829;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Roboto', sans-serif;
+}
+
+#viewButton .lead #view{
+    background-color: #5cb85c;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron #addButton .lead #add:hover{
+    background-color:#d15d15 ;
+    
+}
+
+.jumbotron #viewButton .lead #view:hover{
+    background-color: #3d9c3d;
+}

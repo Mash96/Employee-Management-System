@@ -1,0 +1,12 @@
+form .card .card-body #small{
+	color:gray;
+}
+
+form .card .card-header .title {
+	text-align: center;
+}
+
+/* form .card .card-footer {
+	background-color: #d3d3d3;
+	border-radius:2% ;
+} */ 
