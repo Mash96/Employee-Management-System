@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@types/chart.js": "^2.9.15",
     "angular-bootstrap-md": "^8.10.1",
+    "angular-confirmation-popover": "^4.2.2",
     "angular2-flash-messages": "^3.0.1",
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",

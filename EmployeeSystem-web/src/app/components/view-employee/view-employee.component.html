@@ -1,4 +1,5 @@
 <div class="container">
+  <flash-messages></flash-messages>
   <div class="shadow-sm p-3 mb-5 bg-light rounded row justify-content-md-center jumbotron">
     <form class="form-inline my-2 my-lg-0" (submit)="viewEmployeeByName()">
       <input class="form-control mr-sm-2" type="search"  name ="search" [(ngModel)]="search" placeholder="Search by Name" aria-label="Search">
@@ -32,7 +33,15 @@
               </td>
               
             <td><button class="btn btn-warning" type="submit" (click)="onUpdate(employee.id)" >Update</button></td>
-            <td><button  class="btn btn-danger" type="submit" (click)="onDelete(employee.id)">Delete</button></td>
+            <td><button 
+               class="btn btn-danger"
+               mwlConfirmationPopover
+               [popoverTitle]="popoverTitle"
+               [popoverMessage]="popoverMessage"
+               placement="left"
+               (confirm)="onDelete(employee.id)"
+               (cancel)="cancelClicked= true"
+                type="submit">Delete</button></td>
           </tr>
           </tbody>
         </table>

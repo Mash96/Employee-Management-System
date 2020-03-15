@@ -19,6 +19,7 @@ export class CreateEmployeeComponent implements OnInit {
   skill_set = [];
   result = [];
   list_skill = [];
+  msg: String;
 
   constructor(
     private validateService: ValidateService, 
@@ -103,6 +104,7 @@ export class CreateEmployeeComponent implements OnInit {
         }
         else {
           this.flashMessage.show('Unsuccessfull attempt', {cssClass: 'alert-danger', timeout: 3000});
+          return false;
         }
 
   });

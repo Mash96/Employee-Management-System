@@ -12,3 +12,9 @@
 .nav-item {
     color: white;
 }
+
+.container .flash-messages {
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+}

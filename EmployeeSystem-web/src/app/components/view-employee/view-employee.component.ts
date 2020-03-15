@@ -13,6 +13,9 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 export class ViewEmployeeComponent implements OnInit {
   employee:any;
   search: String;
+  public popoverTitle: String = 'Delete Confirmation';
+  public popoverMessage: String = 'Are you Sure, you want to delete the record?';
+  public cancelClicked:boolean=false;
 
   constructor(
     private viewEmployeeService: ViewEmployeeService, 
@@ -45,6 +48,7 @@ export class ViewEmployeeComponent implements OnInit {
   }
 
   onDelete(id){
+
     this.viewEmployeeService.deleteEmployee(id).subscribe(
       data => {
         if(data){

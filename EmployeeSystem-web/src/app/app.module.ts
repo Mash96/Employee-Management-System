@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-// import { MaterialModule } from './material.module';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 
 import { AppComponent } from './app.component';
@@ -52,7 +52,10 @@ const AppRoutes: Routes = [
     FormsModule,
     FlashMessagesModule.forRoot(),
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger' // set defaults here
+    })
   ],
   providers: [ValidateService, CreateEmployeeService, ViewEmployeeService, EventEmitterService],
   bootstrap: [AppComponent]
