@@ -31,7 +31,15 @@
               <p *ngFor="let field of employee.skills">{{ field.skill }}<p>
             </td>
             <td><button class="btn btn-warning" type="submit" (click)="onUpdateViewName(employee.id)">Update</button></td>
-            <td><button class="btn btn-danger" type="submit" (click)="onDelete(employee.id)">Delete</button></td>
+            <td><button 
+              class="btn btn-danger"
+               mwlConfirmationPopover
+               [popoverTitle]="popoverTitle"
+               [popoverMessage]="popoverMessage"
+               placement="left"
+               (confirm)="onDelete(employee.id)"
+               (cancel)="cancelClicked= true"
+               type="submit">Delete</button></td>
             </tr>
           </tbody>
         </table>

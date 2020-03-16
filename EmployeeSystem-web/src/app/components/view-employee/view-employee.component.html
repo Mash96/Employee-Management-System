@@ -1,9 +1,7 @@
 <div class="container">
   <flash-messages></flash-messages>
   <div class="shadow-sm p-3 mb-5 bg-light rounded row justify-content-md-center jumbotron">
-    <flash-messages></flash-messages>
     <form class="form-inline my-2 my-lg-0 search" >
-      
         <input class="form-control mr-sm-2" type="search"  name ="search" [(ngModel)]="search" placeholder="Search by Name" autocomplete="on" aria-label="Search"><br>
           <button class="btn btn-primary my-2 my-sm-0" type="submit" (click)="viewEmployeeByName()">Search</button>
         <!-- <select class="suggestions" *ngIf="suggestions.length">

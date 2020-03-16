@@ -9,7 +9,10 @@ import {Router,ActivatedRoute,Params} from '@angular/router';
 })
 export class ViewEmployeeNameComponent implements OnInit {
   name: String;
-  employeeName = []
+  employeeName = [];
+  public popoverTitle: String = 'Delete Confirmation';
+  public popoverMessage: String = 'Are you Sure, you want to delete the record?';
+  public cancelClicked:boolean=false;
 
   constructor(
     private viewEmployeeService: ViewEmployeeService,

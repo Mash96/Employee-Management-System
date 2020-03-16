@@ -1,7 +1,9 @@
 .navbar{
     margin-bottom: 30px;
     margin-top: 10px;
+    background-color: black;
 }
+
 .active-link{
     background-color: #5bc0de;
     color: black;
