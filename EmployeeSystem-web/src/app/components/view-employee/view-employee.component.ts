@@ -16,6 +16,8 @@ export class ViewEmployeeComponent implements OnInit {
   public popoverTitle: String = 'Delete Confirmation';
   public popoverMessage: String = 'Are you Sure, you want to delete the record?';
   public cancelClicked:boolean=false;
+  names_list = [];
+  suggestions: string[] = [];
 
   constructor(
     private viewEmployeeService: ViewEmployeeService, 
@@ -27,6 +29,11 @@ export class ViewEmployeeComponent implements OnInit {
     this.viewEmployeeService.getEmployeeList().subscribe(
       data => {
         this.employee = data;
+        for(let emp of this.employee) {
+          this.names_list.push(emp.f_name);
+          
+        }
+        //console.log(this.names_list);
         //console.log(data);
       },
       error =>{
@@ -34,12 +41,30 @@ export class ViewEmployeeComponent implements OnInit {
         return false;
       }
     );
+
+    //console.log(this.names_list);
     
   }
 
   viewEmployeeByName(){
     const name = this.search;
-    this.router.navigate(['/viewEmpByName/'+name])
+    this.viewEmployeeService.getEmployeeByName(name).subscribe(
+      data=>{
+        if(data.length != 0){
+          console.log(data);
+          this.router.navigate(['/viewEmpByName/'+name])
+        }
+        else if(data.length == 0) {
+          this.flashMessage.show('User not found', {cssClass: 'alert-danger', timeout: 3000});
+          return false;
+        }
+      },
+      error=>{
+        console.log(error);
+        return false;
+      }
+    )
+    
   }
 
   onUpdate(id){
@@ -63,5 +88,13 @@ export class ViewEmployeeComponent implements OnInit {
       }  
     );
   }
+
+  // suggest(){
+  //   //console.log(this.names_list);
+  //   this.suggestions = this.names_list.filter((s) => {
+  //     return s.startsWith(this.search);
+  //   })
+  //   .slice(0, 5);
+  // }
 
 }

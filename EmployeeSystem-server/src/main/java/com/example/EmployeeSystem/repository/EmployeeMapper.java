@@ -15,7 +15,7 @@ import java.util.Set;
 public interface EmployeeMapper extends CrudRepository<Employee, Integer> {
     List<Employee> findAll();
 
-    @Query("select p from Employee p where p.f_name = :f_name")
+    @Query("select p from Employee p where p.f_name like %:f_name%")
     List<Employee> find(String f_name);
 
     @Query("delete from Employee p where p.id = :id")

@@ -7,3 +7,8 @@ form table button #warning{
     padding-bottom: 20px;
     padding-top: 10px;
 }
+
+.search .suggestions {
+    margin-top: 180px;
+    margin-left: 50px;
+}
